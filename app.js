@@ -6,7 +6,7 @@ const grid = document.getElementById('audio-grid');
 const audio = document.getElementById('audio');
 const playpause = document.getElementById('playpause');
 const nowplaying = document.getElementById('nowplaying');
-const seek = document.getElementById('seekbar');
+cons seek = document.getElementById('seekbar');
 const back15 = document.getElementById('back15');
 const fwd15 = document.getElementById('fwd15');
 const speed = document.getElementById('speed');
@@ -15,7 +15,7 @@ let list = [];
 let current = -1;
 let seeking = false;
 
-fetch('/data/audios.json')
+fetch('/ata/audios.json')
   .then(r => r.json())
   .then(audios => {
     list = audios;
@@ -49,7 +49,8 @@ playpause.addEventListener('click', ()=>{
   else { audio.pause(); playpause.textContent='⏯'; }
 });
 back15.addEventListener('click', ()=> audio.currentTime = Math.max(0, audio.currentTime - 15));
-fwd15.addEventListener('click', ()=> audio.currentTime = Math.min(audio.duration || 0, audio.currentTime + 15));
+
+wd15.addEventListener('click', ()=> audio.currentTime = Math.min(audio.duration || 0, audio.currentTime + 15));
 speed.addEventListener('change', ()=> audio.playbackRate = parseFloat(speed.value));
 
 audio.addEventListener('timeupdate', ()=>{
@@ -72,3 +73,4 @@ if ('mediaSession' in navigator){
   navigator.mediaSession.setActionHandler('seekbackward', ()=> back15.click());
   navigator.mediaSession.setActionHandler('seekforward', ()=> fwd15.click());
 }
+
