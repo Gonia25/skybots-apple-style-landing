@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Skybots – ultra-clean, high-performance AI voice demos." />
+  <title>Skybots</title>
+  <link rel="preload" href="/images/hero.jpg" as="image">
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <header class="nav">
+    <a class="brand" href="#">Skybots</a>
+    <nav class="nav-links">
+      <a href="#demos">Audio Demos</a>
+      <a href="#features">Features</a>
+      <a href="#pricing">Pricing</a>
+      <a class="cta" href="#contact">Get Started</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO (Apple-style: big type, stark contrast, generous whitespace) -->
+    <section class="hero" aria-labelledby="hero-title">
+      <h1 id="hero-title">Let your voice bot<br/>do the heavy lifting.</h1>
+      <p class="hero-sub">Answer. Qualify. Schedule. Close. Your 24/7 digital rep.</p>
+      <div class="hero-cta">
+        <a class="btn primary" href="#demos">Listen to demos</a>
+        <a class="btn ghost" href="#features">See how it works</a>
+      </div>
+      <figure class="hero-media">
+        <img src="/images/hero.jpg" alt="Futuristic waveform device mockup" width="1600" height="900" loading="eager">
+      </figure>
+    </section>
+
+    <!-- PROMO PANELS (clean, high-contrast slabs, Apple-like rhythm) -->
+    <section id="features" class="panels" aria-label="Highlights">
+      <article class="panel dark">
+        <div class="copy">
+          <h2>Natural. Fast. On-brand.</h2>
+          <p>Latency-tuned responses, branded scripts, and context carry-over across calls.</p>
+        </div>
+        <img src="/images/panel-1.png" alt="Conversation flow preview" width="1200" height="800" loading="lazy">
+      </article>
+      <article class="panel light">
+        <div class="copy">
+          <h2>Plugs into your stack.</h2>
+          <p>Calendars, CRMs, webhooks, and custom endpoints—no human routing required.</p>
+        </div>
+        <img src="/images/panel-2.png" alt="Integrations logos" width="1200" height="800" loading="lazy">
+      </article>
+      <article class="panel dark">
+        <div class="copy">
+          <h2>Built for scale.</h2>
+          <p>Burst concurrency, QA transcripts, and guardrails that actually hold.</p>
+        </div>
+        <img src="/images/panel-3.png" alt="Scalability chart" width="1200" height="800" loading="lazy">
+      </article>
+    </section>
+
+    <!-- AUDIO DEMOS (grid + sticky mini player, JSON-driven) -->
+    <section id="demos" class="audios" aria-labelledby="audios-title">
+      <h2 id="audios-title">Audio demos</h2>
+      <p class="audios-sub">Real flows. Real pacing. Judge the hand-off quality yourself.</p>
+      <div id="audio-grid" class="audio-grid" role="list"></div>
+      <div id="player" class="player" aria-live="polite">
+        <button id="playpause" class="icon" aria-label="Play/Pause" title="Play/Pause">⏯</button>
+        <span id="nowplaying" class="np">—</span>
+        <div class="seek">
+          <input id="seekbar" type="range" min="0" max="100" value="0" aria-label="Seek">
+        </div>
+        <button id="back15" class="icon" aria-label="Back 15s" title="Back 15s">↺15</button>
+        <button id="fwd15" class="icon" aria-label="Forward 15s" title="Forward 15s">15↻</button>
+        <select id="speed" aria-label="Playback speed">
+          <option>1.0×</option><option>1.25×</option><option>1.5×</option><option>1.75×</option><option>2.0×</option>
+        </select>
+      </div>
+      <audio id="audio" preload="none" crossorigin="anonymous"></audio>
+    </section>
+
+    <!-- PRICING (clean 2-tier) -->
+    <section id="pricing" class="pricing" aria-labelledby="pricing-title">
+      <h2 id="pricing-title">Pricing</h2>
+      <div class="cards">
+        <article class="card">
+          <h3>Starter</h3>
+          <p class="price">$399<span>/mo</span></p>
+          <ul>
+            <li>1 voice bot, 1 number</li>
+            <li>Up to 1,000 minutes</li>
+            <li>Email summaries</li>
+          </ul>
+          <a href="#contact" class="btn primary">Choose Starter</a>
+        </article>
+        <article class="card accent">
+          <h3>Growth</h3>
+          <p class="price">$899<span>/mo</span></p>
+          <ul>
+            <li>3 voice bots, multi-numbers</li>
+            <li>Up to 5,000 minutes</li>
+            <li>CRM/webhook sync</li>
+          </ul>
+          <a href="#contact" class="btn primary">Choose Growth</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact" aria-labelledby="contact-title">
+      <h2 id="contact-title">Get started</h2>
+      <form class="contact-form" action="https://formspree.io/f/your-id" method="POST">
+        <label>Name<input name="name" required></label>
+        <label>Email<input name="email" type="email" required></label>
+        <label>Company<input name="company"></label>
+        <label>Message<textarea name="message" rows="4" placeholder="Tell us what you need automated."></textarea></label>
+        <button class="btn primary" type="submit">Request a callback</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© <span id="year"></span> Skybots. All rights reserved.</p>
+  </footer>
+</body>
+</html>
