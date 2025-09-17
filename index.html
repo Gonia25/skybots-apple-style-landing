@@ -19,11 +19,11 @@
   <script defer src="app.js"></script>
 </head>
 <body>
-  <!-- Sticky translucent nav -->
+  <!-- Sticky translucent nav (always dark) -->
   <header class="nav" data-scroll>
     <a class="brand" href="#">Skybots</a>
     <nav class="nav-links">
-      <a href="#demos">Audio Demos</a>
+      <a href="#demos-inline">Audio Demos</a>
       <a href="#features">Features</a>
       <a href="#plans">Plans</a>
       <a class="cta" href="#contact">Talk to Sales</a>
@@ -31,15 +31,15 @@
   </header>
 
   <main>
-    <!-- HERO: youthful friendly robot (full-bleed slab) -->
+    <!-- HERO -->
     <section class="section dark hero" aria-labelledby="hero-title">
       <div class="container hero-grid">
         <div class="hero-copy">
           <h1 id="hero-title">A highly intelligent<br>voice bot—family-friendly fast.</h1>
           <p class="hero-sub">Answer. Qualify. Schedule. Close. Your 24/7 digital rep.</p>
           <div class="hero-cta">
-            <a class="btn primary" href="#demos">Listen to demos</a>
-            <a class="btn ghost" href="#features">See how it works</a>
+            <a class="btn primary" href="#demos-inline">Listen to demos</a>
+            <a class="btn ghost" href="#demos-inline">See how it works</a>
           </div>
         </div>
         <figure class="hero-media">
@@ -50,19 +50,32 @@
       </div>
     </section>
 
-    <!-- FEATURES: three Apple-style slabs -->
+    <!-- FEATURES: Slab #1 (light) WITH INLINE DEMOS ON THE LEFT -->
     <section id="features" class="section light" aria-label="Highlights">
       <div class="container panel">
         <div class="copy">
           <h2>Natural. Fast. On-brand.</h2>
           <p>Latency-tuned speech with calm, human-like pacing and your exact tone.</p>
+
+          <!-- Inline demos (top of site) -->
+          <div id="demos-inline" class="demos-inline" aria-label="Audio demos">
+            <h3 class="demos-title">Audio demos</h3>
+            <div id="audio-grid" class="audio-grid inline" role="list" aria-describedby="demos-inline">
+              <!-- JS will inject three cards here -->
+              <div class="skeleton card"></div>
+              <div class="skeleton card"></div>
+              <div class="skeleton card"></div>
+            </div>
+          </div>
         </div>
+
         <img src="images/speed.webp"
              alt="Robot hand indicating a glass tile with ultra-low latency waveform."
              width="1600" height="1066" loading="lazy" decoding="async">
       </div>
     </section>
 
+    <!-- FEATURES: Slab #2 (dark) -->
     <section class="section dark">
       <div class="container panel">
         <div class="copy">
@@ -75,6 +88,7 @@
       </div>
     </section>
 
+    <!-- FEATURES: Slab #3 (light) -->
     <section class="section light">
       <div class="container panel">
         <div class="copy">
@@ -87,31 +101,20 @@
       </div>
     </section>
 
-    <!-- AUDIO DEMOS (exactly 3) -->
-    <section id="demos" class="section dark" aria-labelledby="audios-title">
-      <div class="container">
-        <h2 id="audios-title">Audio demos</h2>
-        <p class="audios-sub">Real flows. Real pacing. Judge the hand-off quality.</p>
-        <div id="audio-grid" class="audio-grid" role="list" aria-describedby="audios-title">
-          <!-- JS injects 3 cards; skeletons show until loaded -->
-          <div class="skeleton card"></div><div class="skeleton card"></div><div class="skeleton card"></div>
-        </div>
+    <!-- Sticky player lives once, globally -->
+    <div id="player" class="player" aria-live="polite">
+      <button id="playpause" class="icon" aria-label="Play/Pause" title="Play/Pause">⏯</button>
+      <span id="nowplaying" class="np">—</span>
+      <div class="seek"><input id="seekbar" type="range" min="0" max="100" value="0" aria-label="Seek"></div>
+      <button id="back15" class="icon" aria-label="Back 15s" title="Back 15s">↺15</button>
+      <button id="fwd15" class="icon" aria-label="Forward 15s" title="Forward 15s">15↻</button>
+      <select id="speed" aria-label="Playback speed">
+        <option>1.0×</option><option>1.25×</option><option>1.5×</option><option>1.75×</option><option>2.0×</option>
+      </select>
+      <audio id="audio" preload="none" crossorigin="anonymous"></audio>
+    </div>
 
-        <div id="player" class="player" aria-live="polite">
-          <button id="playpause" class="icon" aria-label="Play/Pause" title="Play/Pause">⏯</button>
-          <span id="nowplaying" class="np">—</span>
-          <div class="seek"><input id="seekbar" type="range" min="0" max="100" value="0" aria-label="Seek"></div>
-          <button id="back15" class="icon" aria-label="Back 15s" title="Back 15s">↺15</button>
-          <button id="fwd15" class="icon" aria-label="Forward 15s" title="Forward 15s">15↻</button>
-          <select id="speed" aria-label="Playback speed">
-            <option>1.0×</option><option>1.25×</option><option>1.5×</option><option>1.75×</option><option>2.0×</option>
-          </select>
-        </div>
-        <audio id="audio" preload="none" crossorigin="anonymous"></audio>
-      </div>
-    </section>
-
-    <!-- SLACK-STYLE PRICING (no visible dollars) -->
+    <!-- PLANS (Slack-style, unchanged behavior) -->
     <section id="plans" class="section light" aria-labelledby="plans-title">
       <div class="container">
         <h2 id="plans-title">Plans that match your rollout</h2>
@@ -161,7 +164,6 @@
           </article>
         </div>
 
-        <!-- Minimal comparison block -->
         <div id="compare" class="compare">
           <details>
             <summary>See plan comparison</summary>
