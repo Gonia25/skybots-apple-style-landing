@@ -1,126 +1,214 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="Skybots – ultra-clean, high-performance AI voice demos." />
-  <title>Skybots</title>
-  <link rel="preload" href="/images/hero.jpg" as="image">
-  <link rel="stylesheet" href="styles.css" />
-  <script defer src="app.js"></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Skybots – AI Voice Bots</title>
+  <meta name="description" content="Skybots voice bots: answer, qualify, schedule, and hand-off—24/7, on-brand." />
+  <link rel="icon" href="images/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/icon-180.png">
+  <meta name="theme-color" content="#000000">
+  <meta property="og:title" content="Skybots – AI Voice Bots">
+  <meta property="og:description" content="Answer. Qualify. Schedule. Close. Your 24/7 digital rep.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://gonia25.github.io/skybots-apple-style-landing/">
+  <meta property="og:image" content="https://gonia25.github.io/skybots-apple-style-landing/images/hero.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preload" href="images/hero.webp" as="image" fetchpriority="high">
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="app.js"></script>
 </head>
 <body>
-  <header class="nav">
-    <a class="brand" href="#">Skybots</a>
-    <nav class="nav-links">
-      <a href="#demos">Audio Demos</a>
-      <a href="#features">Features</a>
-      <a href="#pricing">Pricing</a>
-      <a class="cta" href="#contact">Get Started</a>
-    </nav>
-  </header>
+  <!-- Sticky translucent nav -->
+  <header class="nav" data-scroll>
+    <a class="brand" href="#">Skybots</a>
+    <nav class="nav-links">
+      <a href="#demos">Audio Demos</a>
+      <a href="#features">Features</a>
+      <a href="#plans">Plans</a>
+      <a class="cta" href="#contact">Talk to Sales</a>
+    </nav>
+  </header>
 
-  <main>
-    <!-- HERO (Apple-style: big type, stark contrast, generous whitespace) -->
-    <section class="hero" aria-labelledby="hero-title">
-      <h1 id="hero-title">Let your voice bot<br/>do the heavy lifting.</h1>
-      <p class="hero-sub">Answer. Qualify. Schedule. Close. Your 24/7 digital rep.</p>
-      <div class="hero-cta">
-        <a class="btn primary" href="#demos">Listen to demos</a>
-        <a class="btn ghost" href="#features">See how it works</a>
-      </div>
-      <figure class="hero-media">
-        <img src="/images/hero.jpg" alt="Futuristic waveform device mockup" width="1600" height="900" loading="eager">
-      </figure>
-    </section>
+  <main>
+    <!-- HERO: youthful friendly robot (full-bleed slab) -->
+    <section class="section dark hero" aria-labelledby="hero-title">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <h1 id="hero-title">A highly intelligent<br>voice bot—family-friendly fast.</h1>
+          <p class="hero-sub">Answer. Qualify. Schedule. Close. Your 24/7 digital rep.</p>
+          <div class="hero-cta">
+            <a class="btn primary" href="#demos">Listen to demos</a>
+            <a class="btn ghost" href="#features">See how it works</a>
+          </div>
+        </div>
+        <figure class="hero-media">
+          <img src="images/hero.webp"
+               alt="Youthful friendly service robot presenting an audio waveform."
+               width="1600" height="900" decoding="async">
+        </figure>
+      </div>
+    </section>
 
-    <!-- PROMO PANELS (clean, high-contrast slabs, Apple-like rhythm) -->
-    <section id="features" class="panels" aria-label="Highlights">
-      <article class="panel dark">
-        <div class="copy">
-          <h2>Natural. Fast. On-brand.</h2>
-          <p>Latency-tuned responses, branded scripts, and context carry-over across calls.</p>
-        </div>
-        <img src="/images/panel-1.png" alt="Conversation flow preview" width="1200" height="800" loading="lazy">
-      </article>
-      <article class="panel light">
-        <div class="copy">
-          <h2>Plugs into your stack.</h2>
-          <p>Calendars, CRMs, webhooks, and custom endpoints—no human routing required.</p>
-        </div>
-        <img src="/images/panel-2.png" alt="Integrations logos" width="1200" height="800" loading="lazy">
-      </article>
-      <article class="panel dark">
-        <div class="copy">
-          <h2>Built for scale.</h2>
-          <p>Burst concurrency, QA transcripts, and guardrails that actually hold.</p>
-        </div>
-        <img src="/images/panel-3.png" alt="Scalability chart" width="1200" height="800" loading="lazy">
-      </article>
-    </section>
+    <!-- FEATURES: three Apple-style slabs -->
+    <section id="features" class="section light" aria-label="Highlights">
+      <div class="container panel">
+        <div class="copy">
+          <h2>Natural. Fast. On-brand.</h2>
+          <p>Latency-tuned speech with calm, human-like pacing and your exact tone.</p>
+        </div>
+        <img src="images/speed.webp"
+             alt="Robot hand indicating a glass tile with ultra-low latency waveform."
+             width="1600" height="1066" loading="lazy" decoding="async">
+      </div>
+    </section>
 
-    <!-- AUDIO DEMOS (grid + sticky mini player, JSON-driven) -->
-    <section id="demos" class="audios" aria-labelledby="audios-title">
-      <h2 id="audios-title">Audio demos</h2>
-      <p class="audios-sub">Real flows. Real pacing. Judge the hand-off quality yourself.</p>
-      <div id="audio-grid" class="audio-grid" role="list"></div>
-      <div id="player" class="player" aria-live="polite">
-        <button id="playpause" class="icon" aria-label="Play/Pause" title="Play/Pause">⏯</button>
-        <span id="nowplaying" class="np">—</span>
-        <div class="seek">
-          <input id="seekbar" type="range" min="0" max="100" value="0" aria-label="Seek">
-        </div>
-        <button id="back15" class="icon" aria-label="Back 15s" title="Back 15s">↺15</button>
-        <button id="fwd15" class="icon" aria-label="Forward 15s" title="Forward 15s">15↻</button>
-        <select id="speed" aria-label="Playback speed">
-          <option>1.0×</option><option>1.25×</option><option>1.5×</option><option>1.75×</option><option>2.0×</option>
-        </select>
-      </div>
-      <audio id="audio" preload="none" crossorigin="anonymous"></audio>
-    </section>
+    <section class="section dark">
+      <div class="container panel">
+        <div class="copy">
+          <h2>Plugs into anything.</h2>
+          <p>Calendars, CRMs, forms, spreadsheets, webhooks, analytics—no human routing.</p>
+        </div>
+        <img src="images/integrations.webp"
+             alt="Friendly robot surrounded by neutral system glyphs for integrations."
+             width="1600" height="1066" loading="lazy" decoding="async">
+      </div>
+    </section>
 
-    <!-- PRICING (clean 2-tier) -->
-    <section id="pricing" class="pricing" aria-labelledby="pricing-title">
-      <h2 id="pricing-title">Pricing</h2>
-      <div class="cards">
-        <article class="card">
-          <h3>Starter</h3>
-          <p class="price">$399<span>/mo</span></p>
-          <ul>
-            <li>1 voice bot, 1 number</li>
-            <li>Up to 1,000 minutes</li>
-            <li>Email summaries</li>
-          </ul>
-          <a href="#contact" class="btn primary">Choose Starter</a>
-        </article>
-        <article class="card accent">
-          <h3>Growth</h3>
-          <p class="price">$899<span>/mo</span></p>
-          <ul>
-            <li>3 voice bots, multi-numbers</li>
-            <li>Up to 5,000 minutes</li>
-            <li>CRM/webhook sync</li>
-          </ul>
-          <a href="#contact" class="btn primary">Choose Growth</a>
-        </article>
-      </div>
-    </section>
+    <section class="section light">
+      <div class="container panel">
+        <div class="copy">
+          <h2>Scales without drift.</h2>
+          <p>Throughput at peak hours, consistent voice, and guardrails that actually hold.</p>
+        </div>
+        <img src="images/dashboard.webp"
+             alt="Dark analytics dashboard for voice bot with throughput and answer rate."
+             width="1600" height="1066" loading="lazy" decoding="async">
+      </div>
+    </section>
 
-    <!-- CONTACT -->
-    <section id="contact" class="contact" aria-labelledby="contact-title">
-      <h2 id="contact-title">Get started</h2>
-      <form class="contact-form" action="https://formspree.io/f/your-id" method="POST">
-        <label>Name<input name="name" required></label>
-        <label>Email<input name="email" type="email" required></label>
-        <label>Company<input name="company"></label>
-        <label>Message<textarea name="message" rows="4" placeholder="Tell us what you need automated."></textarea></label>
-        <button class="btn primary" type="submit">Request a callback</button>
-      </form>
-    </section>
-  </main>
+    <!-- AUDIO DEMOS (exactly 3) -->
+    <section id="demos" class="section dark" aria-labelledby="audios-title">
+      <div class="container">
+        <h2 id="audios-title">Audio demos</h2>
+        <p class="audios-sub">Real flows. Real pacing. Judge the hand-off quality.</p>
+        <div id="audio-grid" class="audio-grid" role="list" aria-describedby="audios-title">
+          <!-- JS injects 3 cards; skeletons show until loaded -->
+          <div class="skeleton card"></div><div class="skeleton card"></div><div class="skeleton card"></div>
+        </div>
 
-  <footer class="footer">
-    <p>© <span id="year"></span> Skybots. All rights reserved.</p>
-  </footer>
+        <div id="player" class="player" aria-live="polite">
+          <button id="playpause" class="icon" aria-label="Play/Pause" title="Play/Pause">⏯</button>
+          <span id="nowplaying" class="np">—</span>
+          <div class="seek"><input id="seekbar" type="range" min="0" max="100" value="0" aria-label="Seek"></div>
+          <button id="back15" class="icon" aria-label="Back 15s" title="Back 15s">↺15</button>
+          <button id="fwd15" class="icon" aria-label="Forward 15s" title="Forward 15s">15↻</button>
+          <select id="speed" aria-label="Playback speed">
+            <option>1.0×</option><option>1.25×</option><option>1.5×</option><option>1.75×</option><option>2.0×</option>
+          </select>
+        </div>
+        <audio id="audio" preload="none" crossorigin="anonymous"></audio>
+      </div>
+    </section>
+
+    <!-- SLACK-STYLE PRICING (no visible dollars) -->
+    <section id="plans" class="section light" aria-labelledby="plans-title">
+      <div class="container">
+        <h2 id="plans-title">Plans that match your rollout</h2>
+        <p class="muted">Start now. Scale when you’re ready.</p>
+
+        <div class="cards three">
+          <article class="card">
+            <h3>Starter</h3>
+            <p class="sub">Pilot a single bot in one channel.</p>
+            <ul>
+              <li>1 voice bot, 1 number</li>
+              <li>Basic transcripts & summaries</li>
+              <li>Email hand-offs</li>
+            </ul>
+            <div class="actions">
+              <a href="#contact" class="btn primary">Start free</a>
+              <a href="#compare" class="btn ghost">Compare plans</a>
+            </div>
+          </article>
+
+          <article class="card accent">
+            <h3>Growth</h3>
+            <p class="sub">Multi-bot, CRM/webhook integration.</p>
+            <ul>
+              <li>Multiple bots & numbers</li>
+              <li>CRM/webhook sync</li>
+              <li>SLA support</li>
+            </ul>
+            <div class="actions">
+              <a href="#contact" class="btn primary">Talk to sales</a>
+              <a href="#compare" class="btn ghost">Compare plans</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>Enterprise</h3>
+            <p class="sub">Security, compliance, and scale.</p>
+            <ul>
+              <li>SSO, audit trails</li>
+              <li>Dedicated success manager</li>
+              <li>Custom routing & guardrails</li>
+            </ul>
+            <div class="actions">
+              <a href="#contact" class="btn primary">Contact us</a>
+              <a href="#compare" class="btn ghost">Compare plans</a>
+            </div>
+          </article>
+        </div>
+
+        <!-- Minimal comparison block -->
+        <div id="compare" class="compare">
+          <details>
+            <summary>See plan comparison</summary>
+            <table aria-label="Plan comparison">
+              <thead><tr><th>Feature</th><th>Starter</th><th>Growth</th><th>Enterprise</th></tr></thead>
+              <tbody>
+                <tr><td>Bots & numbers</td><td>1 / 1</td><td>Multi / Multi</td><td>Unlimited</td></tr>
+                <tr><td>Transcripts</td><td>Basic</td><td>Enhanced</td><td>Advanced + export</td></tr>
+                <tr><td>Integrations</td><td>Email</td><td>CRM/Webhooks</td><td>Custom</td></tr>
+                <tr><td>Support</td><td>Community</td><td>SLA</td><td>Dedicated</td></tr>
+                <tr><td>Compliance</td><td>—</td><td>—</td><td>SSO/Audit</td></tr>
+              </tbody>
+            </table>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section dark" aria-labelledby="contact-title">
+      <div class="container contact">
+        <h2 id="contact-title">Get started</h2>
+        <form class="contact-form" action="https://formspree.io/f/your-id" method="POST">
+          <label>Name<input name="name" required></label>
+          <label>Email<input name="email" type="email" required></label>
+          <label>Company<input name="company"></label>
+          <label>Message<textarea name="message" rows="4" placeholder="Tell us what you need automated."></textarea></label>
+          <button class="btn primary" type="submit">Request a callback</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- CTA FOOTER IMAGE -->
+    <section class="section dark cta-footer" aria-hidden="true">
+      <img src="images/cta.webp"
+           alt="Minimal desk scene with friendly robot, mic puck, and waveform card."
+           width="1920" height="823" loading="lazy" decoding="async">
+    </section>
+  </main>
+
+  <footer class="footer">
+    <nav class="foot-links">
+      <a href="#contact">Contact</a><span>•</span>
+      <a href="#" aria-disabled="true">Privacy</a><span>•</span>
+      <a href="#" aria-disabled="true">Terms</a>
+    </nav>
+    <p>© <span id="year"></span> Skybots. All rights reserved.</p>
+  </footer>
 </body>
 </html>
