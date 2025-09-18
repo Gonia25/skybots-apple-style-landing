@@ -40,11 +40,15 @@ async function loadList(){
       // try next
     }
   }
-  // Built-in fallback list if JSON not reachable
+  // Built‑in fallback list if JSON cannot be fetched.  Use the
+  // legacy MP3 filenames shipped on the main branch so that the
+  // demos still render even when the JSON is unavailable or
+  // mismatched.  These files live in `/audio/` and will load if
+  // present; otherwise durations will remain `--:--`.
   return [
-    { title: 'Sales Bot — Warm Intro',      url: 'audio/sales-warm-intro.m4a' },
-    { title: 'Service Bot — Scheduling',    url: 'audio/service-scheduling.m4a' },
-    { title: 'Lead Capture — No Form',      url: 'audio/lead-capture-no-form.m4a' }
+    { title: 'Sales Bot — Warm Intro',      url: 'audio/demo_1.mp3' },
+    { title: 'Service Bot — Scheduling',    url: 'audio/demo_2.mp3' },
+    { title: 'Lead Capture — No Form',      url: 'audio/demo_3.mp3' }
   ];
 }
 
