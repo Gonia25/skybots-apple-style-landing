@@ -1,5 +1,5 @@
 [
-  { "title": "Sales Bot — Warm Intro", "url": "audio/demo_1.mp3" },
-  { "title": "Service Bot — Scheduling", "url": "audio/demo_2.mp3" },
-  { "title": "Lead Capture — No Form", "url": "audio/demo_3.mp3" }
+  {"title":"Sales Bot — Warm Intro","url":"audio/sales-warm-intro.m4a"},
+  {"title":"Service Bot — Scheduling","url":"audio/service-scheduling.m4a"},
+  {"title":"Lead Capture — No Form","url":"audio/lead-capture-no-form.m4a"}
 ]
