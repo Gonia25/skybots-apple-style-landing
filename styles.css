@@ -99,3 +99,33 @@ body{
   *{animation:none !important; transition:none !important}
 }
 :focus-visible{outline:2px solid var(--accent); outline-offset:2px}
+
+/* Mobile-first overrides: ensure stunning mobile experience without altering desktop */
+@media (max-width: 768px){
+  /* collapse two-column layouts into single column */
+  .hero{min-height:auto}
+  .hero-grid{grid-template-columns:1fr; gap:24px}
+  /* scale down hero heading and make CTAs full width for easier tapping */
+  .hero h1{font-size:clamp(36px,7vw,48px)}
+  .hero-cta .btn{width:100%}
+  /* stack panel image below copy */
+  .panel{grid-template-columns:1fr; gap:20px}
+  /* increase spacing between demo bars */
+  .demo-list{gap:14px}
+  /* enlarge play button for touch */
+  .demo .play{width:48px; height:48px}
+  /* highlight seek thumb with accent colour */
+  .demo .seek{accent-color:#0A84FF}
+  /* stack plan cards into a single column */
+  .cards.three{grid-template-columns:1fr}
+  /* make comparison table scrollable horizontally on small screens */
+  .compare table{display:block; overflow-x:auto; -webkit-overflow-scrolling:touch}
+}
+
+@media (max-width: 430px){
+  /* reduce gutters on very small screens and account for iOS safe areas */
+  :root{ --gutter:16px }
+  .nav{ padding:calc(10px + env(safe-area-inset-top)) var(--gutter) 10px }
+  /* smaller subhead for ultra small widths */
+  .hero-sub{font-size:clamp(16px,4.3vw,18px)}
+}
